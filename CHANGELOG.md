@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.6a6](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a6) (2025-02-25)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a5...0.2.6a6)
+
+**Merged pull requests:**
+
+- gl/translate [\#23](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/23) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
 ## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a5) (2025-01-25)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a4...0.2.6a5)
