@@ -1,12 +1,50 @@
 # Changelog
 
-## [0.2.5a1](https://github.com/OpenVoiceOS/skill-ovos-spelling/tree/0.2.5a1) (2024-11-19)
+## [0.2.6a6](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a6) (2025-02-25)
 
-[Full Changelog](https://github.com/OpenVoiceOS/skill-ovos-spelling/compare/0.2.4...0.2.5a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a5...0.2.6a6)
 
 **Merged pull requests:**
 
-- fix:allow workshop 3.0.0 [\#11](https://github.com/OpenVoiceOS/skill-ovos-spelling/pull/11) ([JarbasAl](https://github.com/JarbasAl))
+- gl/translate [\#23](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/23) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
+## [0.2.6a5](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a5) (2025-01-25)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a4...0.2.6a5)
+
+**Merged pull requests:**
+
+- fix automations [\#21](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/21) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a4](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a4) (2024-12-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a3...0.2.6a4)
+
+**Merged pull requests:**
+
+- import basque translations [\#19](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/19) ([JarbasAl](https://github.com/JarbasAl))
+- de-de/translate [\#16](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/16) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
+## [0.2.6a3](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a3) (2024-12-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a1...0.2.6a3)
+
+**Merged pull requests:**
+
+- import galician translations [\#17](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/17) ([JarbasAl](https://github.com/JarbasAl))
+
+## [0.2.6a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a1) (2024-11-25)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6a2...0.2.6a1)
+
+## [0.2.6a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.6a2) (2024-11-25)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.5...0.2.6a2)
+
+**Merged pull requests:**
+
+- da-dk/translate [\#14](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/14) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- Add Catalan translation [\#13](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/13) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
 
 
