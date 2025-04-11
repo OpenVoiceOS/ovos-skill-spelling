@@ -11,8 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-from ovos_workshop.intents import IntentBuilder
 from ovos_workshop.decorators import intent_handler
 from ovos_workshop.skills import OVOSSkill
 
@@ -21,9 +19,9 @@ class SpellingSkill(OVOSSkill):
     SEC_PER_LETTER = 0.9  # based on the Mark 1 scrolling speed
     LETTERS_PER_SCREEN = 7.0  # based on the Mark 1 screen size
 
-    @intent_handler(IntentBuilder("").require("Spell").require("Word"))
+    @intent_handler("Spell.intent")
     def handle_spell(self, message):
-        word = message.data.get("Word")
+        word = message.data.get("word")
         spelled_word = '; '.join(word).upper()
 
         # Pause mouth shapes appearing on screen for at least enough time

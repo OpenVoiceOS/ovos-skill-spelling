@@ -1,0 +1,17 @@
+{
+    "Spell.intent": [
+        "deletrear {word}",
+        "deletrear la palabra {word}",
+        "deletrear de {word}",
+        "deletrea la palabra {word}",
+      "(deja escribir la palabra|escribe la palabra|letras de la palabra|letras de) {word}",
+      "¿cómo (se escribe|escribes) [la palabra] {word}",
+      "¿puedes escribir la palabra {word}",
+      "¿cómo se escribe {word}",
+      "¿puedes escribir {word} para mí",
+      "¿cuáles son las letras de {word}",
+      "escribe {word}",
+      "dame las letras de {word}",
+      "¿puedes darme las letras de {word}"
+    ]
+}
