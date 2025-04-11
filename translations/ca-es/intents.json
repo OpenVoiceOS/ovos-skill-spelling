@@ -1,0 +1,17 @@
+{
+    "Spell.intent": [
+        "(lletreja|com s'escriu) {word}",
+        "(com s'escriu|lletreja) (el mot|la paraula) {word}",
+        "(com s'escriu|lletrejament de|lletreig de) {word}",
+        "(lletrejament|lletreig) (del mot|de la paraula) {word}",
+      "(deixa'm escriure la paraula|escriu la paraula|lletres de la paraula|lletres de) {word}",
+      "com (s'escriu|escrius) [la paraula] {word}",
+      "pots escriure la paraula {word}",
+      "com s'escriu {word}",
+      "pots escriure {word} per mi",
+      "quines són les lletres de {word}",
+      "escriu {word}",
+      "dóna'm les lletres de {word}",
+      "pots donar-me les lletres de {word}"
+    ]
+}
