@@ -1,0 +1,9 @@
+{
+  "Spell.intent": [
+    "(épelle|épelle le mot|peux-tu épeler|peux-tu épeler le mot) {word}",
+    "(donne-moi|quelle est) l'orthographe de {word}",
+    "comment s'écrit {word}",
+    "comment épelle-t-on {word}",
+    "orthographe de {word}"
+  ]
+}
