@@ -1,8 +1,0 @@
-{
-    "Spell.intent": [
-      "(spell out|spell the word|spell word|spelling of the word|spelling of) {word}",
-      "how (to|do you) spell [the word] {word}",
-      "(can|could) you spell [the word] {word}",
-      "[can you] (tell me|what is|give me) the spelling of {word}"
-    ]
-}
