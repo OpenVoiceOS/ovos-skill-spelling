@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.7a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.7a2) (2026-07-17)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.7a1...0.2.7a2)
+
+**Merged pull requests:**
+
+- chore: pyproject-only packaging, opm.skill entrypoint, and smoke tests [\#39](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/39) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.7a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.7a1) (2026-04-04)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.6...0.2.7a1)
