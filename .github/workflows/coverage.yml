@@ -11,7 +11,7 @@ jobs:
     secrets: inherit
     with:
       python_version: '3.11'
-      coverage_source: 'ovos_skill_spelling'
+      coverage_source: 'skill_ovos_spelling'
       test_path: 'test/'
       install_extras: ''
       min_coverage: 0

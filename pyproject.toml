@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-skill-spelling"
+dynamic = ["version"]
+description = "OVOS spelling skill"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "JarbasAi", email = "jarbasai@mailfence.com" }
+]
+keywords = ["ovos", "skill", "plugin"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "ovos-utils>=0.0.38,<1.0.0",
+    "ovos-workshop>=8.0.0,<10.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "ovos-workshop>=8.0.0,<10.0.0",
+    "ovos-plugin-manager",
+    "ovos-utils",
+]
+# heavy extra for the ovoscope end-to-end suite; the ovoscope CI job apt-installs
+# swig/libfann so the padatious pipeline can build fann2 for real intent routing.
+end2end = [
+    "pytest",
+    "pytest-timeout",
+    "ovoscope>=1.0.1a1",
+    "ovos-padatious>=1.0.0,<2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-skill-spelling"
+
+[project.entry-points."opm.skill"]
+"skill-ovos-spelling.openvoiceos" = "skill_ovos_spelling:SpellingSkill"
+
+[tool.setuptools.dynamic]
+version = { attr = "version.__version__" }
+
+[tool.setuptools]
+packages = ["skill_ovos_spelling"]
+
+[tool.setuptools.package-dir]
+"skill_ovos_spelling" = "."
+
+[tool.setuptools.package-data]
+"skill_ovos_spelling" = [
+    "*.json",
+    "locale/**/*",
+    "ui/**/*",
+    "vocab/**/*",
+    "dialog/**/*",
+    "regex/**/*",
+    "skill/**/*",
+]
