@@ -70,5 +70,5 @@ setup(
     packages=[SKILL_PKG],
     include_package_data=True,
     keywords='ovos skill plugin',
-    entry_points={'ovos.plugin.skill': PLUGIN_ENTRY_POINT}
+    entry_points={'opm.skill': PLUGIN_ENTRY_POINT}
 )
