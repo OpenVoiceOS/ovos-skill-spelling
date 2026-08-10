@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.3.0a1) (2026-08-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.7a3...0.3.0a1)
+
+**Merged pull requests:**
+
+- feat: add ovoscope end2end intent-routing tests [\#37](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/37) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.7a3](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.2.7a3) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.7a2...0.2.7a3)
