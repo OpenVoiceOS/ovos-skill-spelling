@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.3.0a2) (2026-08-12)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.3.0a1...0.3.0a2)
+
+**Merged pull requests:**
+
+- test: add golden-utterance e2e suite [\#45](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/45) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.3.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.3.0a1) (2026-08-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.2.7a3...0.3.0a1)
