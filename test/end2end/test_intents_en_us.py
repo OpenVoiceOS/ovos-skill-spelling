@@ -106,6 +106,54 @@ class TestSpellingIntentsEnUS(unittest.TestCase):
     def test_spelling_of(self):
         self._assert_intent("spelling of cat", "Spell.intent")
 
+    def test_can_you_what_is_the_spelling_of(self):
+        # golden_utterances.jsonl row 5; padacioso rejected this phrasing
+        # once "can you" stopped alternating in front of "what is the
+        # spelling of {word}" (regression fix).
+        self._assert_intent("can you what is the spelling of word", "Spell.intent")
+
+    def _assert_word_slot_unresolved(self, text: str):
+        # OVOS-INTENT-2 §4.3: a pronoun bound to {word} must be excluded by
+        # word.blacklist, leaving the slot unresolved instead of binding the
+        # pronoun literally.
+        session = Session(f"test-{hash(text)}")
+        session.lang = LANG
+        session.pipeline = list(_PIPELINE)
+        session.blacklisted_intents = []
+        utterance = Message(
+            "recognizer_loop:utterance",
+            {"utterances": [text], "lang": LANG},
+            {"session": session.serialize(), "source": "A", "destination": "B"},
+        )
+        capture = CaptureSession(
+            self.minicroft,
+            eof_msgs=["mycroft.skill.handler.start"],
+            ignore_messages=_IGNORE,
+        )
+        capture.capture(utterance, timeout=30)
+        messages = capture.finish()
+        matched = [
+            m for m in messages
+            if _matches_intent(m.msg_type, SKILL_ID, "Spell.intent")
+        ]
+        self.assertTrue(matched, f"no message routed to {SKILL_ID}:Spell.intent")
+        self.assertFalse(
+            matched[0].data.get("word"),
+            f"pronoun bound to unresolved {{word}} slot: {matched[0].data}",
+        )
+
+    def test_pronoun_it_is_blacklisted(self):
+        self._assert_word_slot_unresolved("how do you spell it")
+
+    def test_pronoun_that_is_blacklisted(self):
+        self._assert_word_slot_unresolved("spell that")
+
+    def test_pronoun_this_is_blacklisted(self):
+        self._assert_word_slot_unresolved("can you spell this")
+
+    def test_pronoun_them_is_blacklisted(self):
+        self._assert_word_slot_unresolved("can you spell them")
+
 
 if __name__ == "__main__":
     unittest.main()
