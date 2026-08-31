@@ -22,6 +22,14 @@ class SpellingSkill(OVOSSkill):
     @intent_handler("Spell.intent")
     def handle_spell(self, message):
         word = message.data.get("word")
+        if word is None:
+            # OVOS-INTENT-3 §7.1: an anaphoric pronoun ("it", "that", ...) is
+            # blacklisted out of the {word} slot (word.blacklist), leaving it
+            # unresolved rather than binding the pronoun literally. Re-prompt
+            # for the actual word instead of failing.
+            word = self.get_response("what.word")
+            if not word:
+                return
         spelled_word = '; '.join(word).upper()
 
         # Pause mouth shapes appearing on screen for at least enough time
