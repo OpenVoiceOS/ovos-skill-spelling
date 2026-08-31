@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.1a1) (2026-08-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.0a1...0.4.1a1)
+
+**Merged pull requests:**
+
+- fix: lift the padatious \<2.0.0 cap so e2e CI tests the production line [\#47](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/47) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.0a1) (2026-08-31)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.3.0a2...0.4.0a1)
