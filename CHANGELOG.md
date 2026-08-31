@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.0a1) (2026-08-31)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.3.0a2...0.4.0a1)
+
+**Merged pull requests:**
+
+- feat: consolidate en-US spell intent + pronoun slot blacklist [\#38](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/38) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.3.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.3.0a2) (2026-08-12)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.3.0a1...0.3.0a2)
