@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.1a2) (2026-09-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.1a1...0.4.1a2)
+
+**Merged pull requests:**
+
+- translate\(kab\): update word.entity [\#50](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/50) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
+
 ## [0.4.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.1a1) (2026-08-31)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.0a1...0.4.1a1)
