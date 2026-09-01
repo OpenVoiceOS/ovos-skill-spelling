@@ -1,1 +1,0 @@
-(deletrea a palabra|deletreo da palabra|ortografía de(?! the)|deletrea(?! the)) (?P<Word>\w+)

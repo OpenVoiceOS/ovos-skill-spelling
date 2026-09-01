@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(stav ordet|stav ord|stavningen af ordet|stavningen(?! the)|stav(?! the)) (?P<Word>\\w+)"
-    ]
-}

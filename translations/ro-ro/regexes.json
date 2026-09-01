@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(rosti\u021bi cuv\u00e2ntul | silabise\u0219te cuv\u00e2ntul|ortografierea cuv\u00e2ntului | ortografie a (?! lui) (?P<Word>\\w+)"
-    ]
-}
