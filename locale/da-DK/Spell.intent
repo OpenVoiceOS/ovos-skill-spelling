@@ -1,0 +1,4 @@
+(stav|stav ordet|staveord|stavestavning af) {word}
+hvordan staver du [ordet] {word}
+(kan|kunne) du stave [ordet] {word}
+[kan du] (fortæl mig|hvad er|giv mig) stavningen af {word}
