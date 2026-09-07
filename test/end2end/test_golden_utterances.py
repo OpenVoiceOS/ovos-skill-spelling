@@ -26,9 +26,7 @@ SKILL_ID = "skill-ovos-spelling.openvoiceos"
 LANG = "en-US"
 
 _PIPELINE = [
-    "ovos-padatious-pipeline-plugin-high",
     "ovos-padacioso-pipeline-plugin-high",
-    "ovos-padatious-pipeline-plugin-medium",
     "ovos-padacioso-pipeline-plugin-medium",
 ]
 
@@ -57,54 +55,7 @@ NEGATIVE_UTTERANCES = [
     ("set an alarm", "ovos-skill-alerts.openvoiceos"),
 ]
 
-# Real, CI-reproduced collision: en-US/Spell.intent's padatious training data
-# uses the literal word "word" as fixed vocabulary in several lines (eg.
-# "spell word {word}", "spelling of the word {word}"), not only as the slot
-# name. That gives padatious's fuzzy matcher enough token overlap to loosely
-# claim "tell me the word of the day" (it shares "tell", "me", "the", "word",
-# "of" with several Spell.intent training lines). This reproduces on the
-# CI-pinned padatious build (see PR CI run) but NOT in this dev environment,
-# where ovos-padatious can't be built (missing libfann-dev, no sudo) and the
-# medium-priority padacioso pipeline -- a stricter, non-fuzzy matcher --
-# handles the utterance instead and correctly rejects it. Rather than pick a
-# different negative and hide a real cross-skill leak, or blind-edit
-# Spell.intent's templates without a way to locally verify the fix against
-# padatious, this is tracked as a strict xfail: a row that stops reproducing
-# (env gets padatious, and it no longer collides) must fail the build.
-_NEGATIVE_XFAIL_REASONS = {
-    "tell me the word of the day": (
-        "padatious fuzzy-matches this to Spell.intent via token overlap on "
-        "the literal 'word' vocabulary shared by several training lines "
-        "(see ovos-skill-word-of-the-day.openvoiceos golden-utterance "
-        "corpus row); reproduces under CI-pinned padatious, not under the "
-        "padacioso fallback used in this dev venv (no libfann-dev locally). "
-        "padatious training variance: this confusable sometimes routes "
-        "away correctly -- non-strict because the outcome is genuinely "
-        "nondeterministic."
-    ),
-}
-
-
-try:
-    import ovos_padatious  # noqa: F401
-    _PADATIOUS_INSTALLED = True
-except ImportError:
-    _PADATIOUS_INSTALLED = False
-
-
-def _as_negative_param(negative):
-    text, _source_skill = negative
-    reason = _NEGATIVE_XFAIL_REASONS.get(text)
-    # the collision only reproduces when ovos-padatious's fuzzy matcher is
-    # actually in the pipeline (see _NEGATIVE_XFAIL_REASONS docstring above);
-    # without it, padacioso handles the utterance and correctly rejects it,
-    # so the xfail must not be applied or this would XPASS-fail locally.
-    if reason is None or not _PADATIOUS_INSTALLED:
-        return pytest.param(negative, id=text)
-    return pytest.param(negative, id=text, marks=pytest.mark.xfail(reason=reason, strict=False))
-
-
-NEGATIVE_PARAMS = [_as_negative_param(n) for n in NEGATIVE_UTTERANCES]
+NEGATIVE_PARAMS = [pytest.param(n, id=n[0]) for n in NEGATIVE_UTTERANCES]
 
 
 def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
