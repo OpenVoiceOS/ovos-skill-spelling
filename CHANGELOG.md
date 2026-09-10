@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.5.0a1) (2026-09-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.1a2...0.5.0a1)
+
+**Merged pull requests:**
+
+- translate\(da-DK\): consolidated fixes for da-DK locale [\#59](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/59) ([andlo](https://github.com/andlo))
+- feat: oc-FR locale parity [\#54](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/54) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.1a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.4.1a2) (2026-09-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.1a1...0.4.1a2)
