@@ -61,9 +61,11 @@ class TestSkillLoading(unittest.TestCase):
         skill = self._make_skill()
         spoken: list[str] = []
         skill.speak = lambda utt, *a, **k: spoken.append(utt)
-        # adversarial: a garbage/empty capture must not take the skill down
+        # adversarial: a garbage/empty capture must not take the skill down;
+        # an empty slot is as unresolved as a missing one, so it re-prompts
+        skill.get_response = lambda *a, **k: None
         skill.handle_spell(Message("", {"word": ""}))
-        self.assertEqual(spoken, [""])
+        self.assertIn(spoken[0], skill.resources.load_dialog_file("no_word"))
 
     def test_unresolved_word_reprompts_instead_of_crashing(self):
         # OVOS-INTENT-3 §7.1: a blacklisted slot (word.blacklist) leaves
@@ -77,13 +79,42 @@ class TestSkillLoading(unittest.TestCase):
         skill.handle_spell(Message("", {}))
         self.assertEqual(spoken, ["C; A; T"])
 
-    def test_unresolved_word_no_answer_does_not_crash(self):
+    def test_unresolved_word_no_answer_gives_up(self):
         skill = self._make_skill()
         spoken: list[str] = []
         skill.speak = lambda utt, *a, **k: spoken.append(utt)
         skill.get_response = lambda *a, **k: None
         skill.handle_spell(Message("", {}))
-        self.assertEqual(spoken, [])
+        self.assertIn(spoken[0], skill.resources.load_dialog_file("no_word"))
+
+    def test_reply_carrier_phrase_is_stripped(self):
+        # people answer "which word?" by repeating the request
+        skill = self._make_skill()
+        for reply in ("banana", "the word banana", "spell banana",
+                      "how do you spell banana", "spell out banana"):
+            with self.subTest(reply=reply):
+                self.assertEqual(skill.word_from_reply(reply), "banana")
+
+    def test_reply_keeps_multi_word_answers(self):
+        skill = self._make_skill()
+        self.assertEqual(skill.word_from_reply("the word new york"), "new york")
+
+    def test_blacklisted_reply_asks_once_more(self):
+        skill = self._make_skill()
+        spoken: list[str] = []
+        skill.speak = lambda utt, *a, **k: spoken.append(utt)
+        replies = iter(["it", "the word banana"])
+        skill.get_response = lambda *a, **k: next(replies)
+        skill.handle_spell(Message("", {}))
+        self.assertEqual(spoken, ["B; A; N; A; N; A"])
+
+    def test_two_blacklisted_replies_give_up(self):
+        skill = self._make_skill()
+        spoken: list[str] = []
+        skill.speak = lambda utt, *a, **k: spoken.append(utt)
+        skill.get_response = lambda *a, **k: "that"
+        skill.handle_spell(Message("", {}))
+        self.assertIn(spoken[0], skill.resources.load_dialog_file("no_word"))
 
 
 class TestPluginDiscovery(unittest.TestCase):
