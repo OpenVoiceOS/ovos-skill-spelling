@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.6.0a1) (2026-09-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.5.0a1...0.6.0a1)
+
+**Merged pull requests:**
+
+- feat: it-IT, pt-BR, nl-NL, sv-SE locale parity [\#53](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/53) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.5.0a1) (2026-09-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.4.1a2...0.5.0a1)
