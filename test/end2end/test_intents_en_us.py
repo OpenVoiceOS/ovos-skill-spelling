@@ -1,7 +1,7 @@
 """End-to-end intent routing tests for the en-US locale.
 
 Each canonical utterance is fired through a real MiniCroft and asserted to route
-to the padatious ``Spell.intent`` handler. The spoken spelling is a side effect
+to the padacioso ``Spell.intent`` handler. The spoken spelling is a side effect
 that varies by backend and is ignored, so the assertion covers only the intent
 binding.
 """
@@ -41,9 +41,7 @@ def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
     return norm(observed_base) == norm(expected_base)
 
 _PIPELINE = [
-    "ovos-padatious-pipeline-plugin-high",
     "ovos-padacioso-pipeline-plugin-high",
-    "ovos-padatious-pipeline-plugin-medium",
     "ovos-padacioso-pipeline-plugin-medium",
 ]
 
