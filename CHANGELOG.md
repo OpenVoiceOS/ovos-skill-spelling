@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.7.0a1) (2026-09-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.6.0a1...0.7.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): parity for ovos-skill-spelling \(7 locales\) [\#62](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/62) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.6.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.6.0a1) (2026-09-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.5.0a1...0.6.0a1)
