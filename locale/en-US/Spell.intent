@@ -1,0 +1,10 @@
+# Training samples for the "spell this word" intent.
+# {word} is an open slot filled with whatever the user asks to have spelled.
+# Alternations (a|b) and optionals [x] keep the phrasings consolidated instead
+# of one line per wording, see OVOS-INTENT-1 §3.
+(how do you|how to|how would i) spell [(out|word|the word)] {word}
+(can|could|would) you spell [(out|word|the word)] {word}
+spell [(out|word|the word)] {word}
+[can you] (what is|what's|what) the spelling of {word}
+[(can|could|would) you] (tell me|give me) the spelling of {word}
+[the] spelling of [the word] {word}

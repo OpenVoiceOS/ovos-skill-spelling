@@ -1,0 +1,43 @@
+# Slot-value exclusion for the {word} slot of Spell.intent (OVOS-INTENT-2 §4.3:
+# a .blacklist paired by base name with a slot lists values that MUST NOT fill
+# it, leaving the slot unresolved rather than binding them).
+#
+# Concrete conflict: utterances like "how do you spell it", "spell them" or
+# "can you spell this" would otherwise bind the anaphoric pronoun as {word} and
+# the skill would dutifully spell out "I-T" / "T-H-E-M". Excluding the pronouns
+# leaves {word} unresolved so a later stage resolves the referent
+# (OVOS-CONTEXT-1 §7 context fill) or the skill re-prompts for the actual word.
+#
+# One phrase per line (BlacklistFile.load() only expands a line that contains
+# an inline "<vocab>" reference; parenthesised alternations like "(a|b)" are
+# NOT expanded here and would otherwise be stored and matched as a single
+# literal string, silently disabling the exclusion).
+#
+# Pronoun sets are language-specific, hence kept here in locale/en-US/ rather
+# than in engine code (OVOS-INTENT-2 §4.3).
+it
+this
+that
+these
+those
+he
+she
+they
+him
+her
+them
+his
+hers
+their
+theirs
+i
+me
+my
+mine
+you
+your
+yours
+we
+us
+our
+ours
