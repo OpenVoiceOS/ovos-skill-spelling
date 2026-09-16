@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.8.0a1) (2026-09-16)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.7.0a2...0.8.0a1)
+
+**Merged pull requests:**
+
+- feat: cover the ways people ask for a spelling [\#56](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/56) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.7.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.7.0a2) (2026-09-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.7.0a1...0.7.0a2)
