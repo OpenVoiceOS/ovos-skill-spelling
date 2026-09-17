@@ -11,10 +11,10 @@ SKILL_ID = "skill-ovos-spelling.openvoiceos"
 
 
 def _registers_intent(skill: SpellingSkill, skill_id: str, intent_file: str) -> bool:
-    """True if ``skill`` has registered ``intent_file`` (eg. "Spell.intent"),
+    """True if ``skill`` has registered ``intent_file`` (eg. "spell.intent"),
     tolerant of which ".intent" basename normalization the registering
     pipeline uses (ovos-padatious >=2.0 registers the suffixless canonical
-    name, eg. "Spell", where older/other pipelines keep "Spell.intent";
+    name, eg. "spell", where older/other pipelines keep "spell.intent";
     see test/end2end/test_intents_en_us.py's ``_matches_intent`` for the
     same tolerance on the wire).
     """
@@ -48,7 +48,7 @@ class TestSkillLoading(unittest.TestCase):
 
     def test_registers_spell_intent(self):
         skill = self._make_skill()
-        self.assertTrue(_registers_intent(skill, SKILL_ID, "Spell.intent"))
+        self.assertTrue(_registers_intent(skill, SKILL_ID, "spell.intent"))
 
     def test_spells_word(self):
         skill = self._make_skill()
