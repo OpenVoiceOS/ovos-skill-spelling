@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "cal é a ortografía de banana", "lang": "gl-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "como escribes banana", "lang": "gl-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "como escribes a palabra elephant", "lang": "gl-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
