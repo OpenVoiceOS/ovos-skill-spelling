@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.0a2) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.10.0a1...0.10.0a2)
+
+**Merged pull requests:**
+
+- test: golden utterances for every locale [\#69](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/69) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.10.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.0a1) (2026-09-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.9.1a1...0.10.0a1)
