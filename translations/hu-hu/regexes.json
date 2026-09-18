@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(?P<Word>\\w+) (kiejt\u00e9se|helyes\u00edr\u00e1sa|bet\u0171z\u00e9se)"
-    ]
-}
