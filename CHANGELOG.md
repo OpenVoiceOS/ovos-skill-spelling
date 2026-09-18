@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.0a1) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.9.1a1...0.10.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): fill de-DE, es-ES, gl-ES, eu-ES and ca-ES gaps against en-US [\#68](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/68) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.9.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.9.1a1) (2026-09-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.9.0a1...0.9.1a1)
