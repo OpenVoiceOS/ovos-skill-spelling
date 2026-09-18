@@ -1,17 +1,11 @@
 """Golden-utterance end-to-end coverage for ovos-skill-spelling (en-US).
 
-The golden corpus (``golden_utterances.jsonl``) is a vendored slice of the
-shared ovoscope golden-utterance dataset, keyed by
-``skill_id == "ovos-skill-spelling.openvoiceos"``. One shared ``MiniCroft``
-(module-scoped fixture) is booted for the whole suite; every row is its own
-parametrized test item.
-
-Runtime note: the corpus keys rows by the PyPI/repo-derived skill_id
-(``ovos-skill-spelling.openvoiceos``), but the skill's actual OPM entry point
--- and therefore the routed message prefix -- is
-``skill-ovos-spelling.openvoiceos`` (see ``pyproject.toml``'s
-``[project.entry-points."opm.skill"]`` and ``test_intents_en_us.py``). This
-suite asserts against the runtime id, not the corpus label.
+The golden corpus (``golden_utterances_en-US.jsonl``) keys every row by the
+skill's OPM entry point, ``skill-ovos-spelling.openvoiceos`` (see
+``pyproject.toml``'s ``[project.entry-points."opm.skill"]``), which is the
+routed message prefix, and by the intent file that ships, ``spell.intent``.
+One shared ``MiniCroft`` (module-scoped fixture) is booted for the whole
+suite; every row is its own parametrized test item.
 """
 import json
 import re
@@ -40,7 +34,7 @@ _IGNORE = [
     "enclosure.mouth.events.activate",
 ]
 
-GOLDEN_PATH = Path(__file__).parent / "golden_utterances.jsonl"
+GOLDEN_PATH = Path(__file__).parent / "golden_utterances_en-US.jsonl"
 
 # utterances lifted verbatim from OTHER skills' golden-utterance slices in
 # the shared ovoscope corpus, picked for lexical overlap with spelling's
@@ -59,17 +53,21 @@ NEGATIVE_PARAMS = [pytest.param(n, id=n[0]) for n in NEGATIVE_UTTERANCES]
 
 
 def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
-    """Same tolerant matcher as ``test_intents_en_us.py``: compare the
-    ``:``-suffix basename, extension-stripped and case/punct-insensitive, so
-    the assertion doesn't pin the wire format of any one pipeline plugin."""
+    """Exact match on the base name the skill registers.
+
+    The runtime emits ``<skill_id>:<basename>`` with the basename spelled as
+    the file is; a comparison that folded case let 50 rows read
+    ``Spell.intent`` against a shipped ``spell.intent`` and pass. A row
+    must name the file exactly, or the census that trains a corpus from
+    these rows trains a label no skill registers.
+    """
     prefix = f"{skill_id}:"
     if not msg_type.startswith(prefix):
         return False
     observed = msg_type[len(prefix):]
-    observed_base = observed.rsplit(".", 1)[0] if observed.endswith(".intent") else observed
-    expected_base = intent_file.rsplit(".", 1)[0] if intent_file.endswith(".intent") else intent_file
-    norm = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
-    return norm(observed_base) == norm(expected_base)
+    observed_base = observed[:-len(".intent")] if observed.endswith(".intent") else observed
+    expected_base = intent_file[:-len(".intent")] if intent_file.endswith(".intent") else intent_file
+    return observed_base == expected_base
 
 
 # Rows that do not currently route correctly, with the root-caused reason.
@@ -147,6 +145,8 @@ def _golden_id(row):
 @pytest.mark.parametrize("row", GOLDEN_ROWS, ids=_golden_id)
 def test_golden_utterance(minicroft, row):
     types = _types(minicroft, row["utterance"], f"golden-{_golden_id(row)}")
+    assert row["skill_id"] == SKILL_ID, (
+        f"{row['utterance']!r}: skill_id {row['skill_id']!r} is not the entry point {SKILL_ID!r}")
     assert any(_matches_intent(t, SKILL_ID, row["intent_label"]) for t in types), (
         f"{row['utterance']!r}: expected {SKILL_ID}:{row['intent_label']}, got {types!r}"
     )

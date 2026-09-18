@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "come si scrive banana", "lang": "it-IT", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "come si scrive (la parola banana", "lang": "it-IT", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "scandisci elephant", "lang": "it-IT", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
