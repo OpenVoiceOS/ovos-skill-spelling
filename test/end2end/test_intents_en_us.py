@@ -1,7 +1,7 @@
 """End-to-end intent routing tests for the en-US locale.
 
 Each canonical utterance is fired through a real MiniCroft and asserted to route
-to the padacioso ``Spell.intent`` handler. The spoken spelling is a side effect
+to the padacioso ``spell.intent`` handler. The spoken spelling is a side effect
 that varies by backend and is ignored, so the assertion covers only the intent
 binding.
 """
@@ -18,13 +18,13 @@ LANG = "en-US"
 
 def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
     """Check whether ``msg_type`` is the matched-intent event for
-    ``intent_file`` (eg. ``Spell.intent``), tolerant of which pipeline
+    ``intent_file`` (eg. ``spell.intent``), tolerant of which pipeline
     plugin matched it.
 
     Different pipeline plugins (padatious vs padacioso) register intents
     under different normalizations of the ``.intent`` filename basename —
     observed variants include the literal PascalCase basename with no
-    extension (``Spell``) and the snake_case basename with the extension
+    extension (``spell``) and the snake_case basename with the extension
     kept (``spell.intent``). Rather than pin one wire format (which breaks
     the moment the matching plugin or its version changes), compare
     case-insensitively against the basename with the extension stripped
@@ -96,19 +96,19 @@ class TestSpellingIntentsEnUS(unittest.TestCase):
         )
 
     def test_how_do_you_spell(self):
-        self._assert_intent("how do you spell cat", "Spell.intent")
+        self._assert_intent("how do you spell cat", "spell.intent")
 
     def test_spell_the_word(self):
-        self._assert_intent("spell the word cat", "Spell.intent")
+        self._assert_intent("spell the word cat", "spell.intent")
 
     def test_spelling_of(self):
-        self._assert_intent("spelling of cat", "Spell.intent")
+        self._assert_intent("spelling of cat", "spell.intent")
 
     def test_can_you_what_is_the_spelling_of(self):
         # golden_utterances.jsonl row 5; padacioso rejected this phrasing
         # once "can you" stopped alternating in front of "what is the
         # spelling of {word}" (regression fix).
-        self._assert_intent("can you what is the spelling of word", "Spell.intent")
+        self._assert_intent("can you what is the spelling of word", "spell.intent")
 
     def _assert_word_slot_unresolved(self, text: str):
         # OVOS-INTENT-2 §4.3: a pronoun bound to {word} must be excluded by
@@ -132,9 +132,9 @@ class TestSpellingIntentsEnUS(unittest.TestCase):
         messages = capture.finish()
         matched = [
             m for m in messages
-            if _matches_intent(m.msg_type, SKILL_ID, "Spell.intent")
+            if _matches_intent(m.msg_type, SKILL_ID, "spell.intent")
         ]
-        self.assertTrue(matched, f"no message routed to {SKILL_ID}:Spell.intent")
+        self.assertTrue(matched, f"no message routed to {SKILL_ID}:spell.intent")
         self.assertFalse(
             matched[0].data.get("word"),
             f"pronoun bound to unresolved {{word}} slot: {matched[0].data}",
