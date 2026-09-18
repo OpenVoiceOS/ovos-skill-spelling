@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.9.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.9.0a1) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.8.0a1...0.9.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): fill fr-FR gap against en-US [\#67](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/67) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.8.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.8.0a1) (2026-09-16)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.7.0a2...0.8.0a1)
