@@ -19,7 +19,7 @@ class SpellingSkill(OVOSSkill):
     SEC_PER_LETTER = 0.9  # based on the Mark 1 scrolling speed
     LETTERS_PER_SCREEN = 7.0  # based on the Mark 1 screen size
 
-    @intent_handler("Spell.intent")
+    @intent_handler("spell.intent")
     def handle_spell(self, message):
         word = message.data.get("word")
         if word is None:
@@ -27,7 +27,7 @@ class SpellingSkill(OVOSSkill):
             # blacklisted out of the {word} slot (word.blacklist), leaving it
             # unresolved rather than binding the pronoun literally. Re-prompt
             # for the actual word instead of failing.
-            word = self.get_response("what.word")
+            word = self.get_response("what_word")
             if not word:
                 return
         spelled_word = '; '.join(word).upper()
