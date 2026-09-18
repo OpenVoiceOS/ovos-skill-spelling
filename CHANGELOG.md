@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.9.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.9.1a1) (2026-09-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.9.0a1...0.9.1a1)
+
+**Merged pull requests:**
+
+- fix: resource names per OVOS-INTENT-2 §2 [\#71](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/71) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.9.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.9.0a1) (2026-09-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.8.0a1...0.9.0a1)
