@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.10.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.1a1) (2026-09-23)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.10.0a2...0.10.1a1)
+
+**Merged pull requests:**
+
+- fix\(locale\): eu-ES spelling title and examples from the locale's own words [\#75](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/75) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.10.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.0a2) (2026-09-18)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.10.0a1...0.10.0a2)
