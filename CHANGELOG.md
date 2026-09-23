@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.0a1) (2026-09-23)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.10.1a1...0.11.0a1)
+
+**Merged pull requests:**
+
+- feat\(pt-PT\): the locale gets the skill.json every other locale has [\#77](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/77) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.10.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.10.1a1) (2026-09-23)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.10.0a2...0.10.1a1)
