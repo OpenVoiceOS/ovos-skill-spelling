@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.2a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.2a1) (2026-09-24)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.1a1...0.11.2a1)
+
+**Merged pull requests:**
+
+- fix\(locale\): skill.json examples match trained spell.intent lines [\#79](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/79) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.11.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.1a1) (2026-09-24)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.0a1...0.11.1a1)
