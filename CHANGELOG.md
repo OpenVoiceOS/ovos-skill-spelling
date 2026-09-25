@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.3a3](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a3) (2026-09-25)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a2...0.11.3a3)
+
+**Merged pull requests:**
+
+- translate\(kab\): update what\_word.dialog [\#84](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/84) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
+
 ## [0.11.3a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a2) (2026-09-25)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a1...0.11.3a2)
@@ -7,7 +15,6 @@
 **Merged pull requests:**
 
 - translate\(kab\): update no\_word.dialog [\#85](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/85) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
-- translate\(kab\): update what\_word.dialog [\#84](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/84) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
 
 ## [0.11.3a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a1) (2026-09-25)
 
