@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.3a4](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a4) (2026-09-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a3...0.11.3a4)
+
+**Merged pull requests:**
+
+- docs\(locale\): mark the machine-written lines unvouched, and only those [\#88](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/88) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.11.3a3](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a3) (2026-09-25)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a2...0.11.3a3)
