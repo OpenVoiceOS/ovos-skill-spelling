@@ -1,0 +1,20 @@
+# Training samples for the "spell this word" intent.
+# {word} is an open slot filled with whatever the user asks to have spelled.
+# Alternations (a|b) and optionals [x] keep the phrasings consolidated instead
+# of one line per wording, see OVOS-INTENT-1 §3.
+# "letter by letter" and "for me" are trailing politeness/manner phrases: they
+# are listed as optionals so they are not swallowed into {word}.
+jak napisać reguł {word}
+Jak się pisze? {word}
+Jak miałbym rytać {word}
+Umiesz rytować {word}
+Umiesz rytować? {word}
+Napisałbyś: {word}
+przeczytanie {word}
+Jak się ma {word} przepisane
+Jak się ma się {word} przepisane
+Jaka jest piosenkarka {word}
+Powiedz mi, jak to jest. {word}
+Podaj mi słuszne wypowiedzienie {word}
+rygującego się z prawnictwem {word}
+{word} Jak to się napisuje
