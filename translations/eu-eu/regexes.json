@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(letreiatu|letraka esan|esan letraka) (?P<Word>\\w+)"
-    ]
-}

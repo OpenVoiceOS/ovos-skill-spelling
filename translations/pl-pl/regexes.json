@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(przeliteruj s\u0142owo|literuj s\u0142owo|litery w s\u0142owie) (?P<Word>\\w+)"
-    ]
-}

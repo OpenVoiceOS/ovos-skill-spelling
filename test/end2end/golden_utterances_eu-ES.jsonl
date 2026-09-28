@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "eman iezadazu banana hitzaren idazketa", "lang": "eu-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "emango al didazu banana hitzaren idazketa", "lang": "eu-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "hitza idazketa elephant", "lang": "eu-ES", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}

@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "hoe spel je banana", "lang": "nl-NL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "hoe spel je (het woord banana", "lang": "nl-NL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "spel elephant", "lang": "nl-NL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}

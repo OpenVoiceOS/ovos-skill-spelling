@@ -1,5 +1,0 @@
-{
-    "word.rx": [
-        "(spell the word|spell word|spelling of the word|spelling of(?! the)|spell(?! the)) (?P<Word>\\w+)"
-    ]
-}

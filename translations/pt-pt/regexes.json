@@ -1,5 +1,0 @@
-{
-  "word.rx": [
-    "(soletrar a palavra|soletra a palavra|soletrando a palavra|como se soletra a palavra|como se escreve a palavra|soletra(?! a))  (?P<Word>\\w+)"
-  ]
-}

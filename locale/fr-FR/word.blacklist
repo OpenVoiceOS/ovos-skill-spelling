@@ -1,0 +1,32 @@
+# Slot-value exclusion for the {word} slot of Spell.intent (OVOS-INTENT-2 §4.3:
+# a .blacklist paired by base name with a slot lists values that MUST NOT fill
+# it, leaving the slot unresolved rather than binding them).
+#
+# French pronoun set, mirrors locale/en-US/word.blacklist. One phrase per line.
+ça
+ceci
+cela
+ces
+ceux
+il
+elle
+ils
+elles
+lui
+leur
+son
+sa
+leurs
+je
+moi
+mon
+ma
+mes
+tu
+toi
+ton
+ta
+tes
+nous
+notre
+nos

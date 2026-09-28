@@ -1,0 +1,10 @@
+# OVOS-INTENT-2 §6.1: phrases that suppress Spell.intent from matching at all.
+#
+# "spell check my essay", "run a spell checker" and friends share the word
+# "spell" with every training sample but ask for proofreading, not for a word
+# to be read out letter by letter. Without this the "spell {word}" sample
+# claims them and the skill spells the rest of the sentence.
+spell check
+spellcheck
+spell checker
+spell checking
