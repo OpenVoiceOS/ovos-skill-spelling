@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.12.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.12.0a1) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a4...0.12.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): draft es-CO from es-ES \(copy, unvouched\) [\#90](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/90) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.11.3a4](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.11.3a4) (2026-09-26)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a3...0.11.3a4)
