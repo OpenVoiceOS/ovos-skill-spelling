@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.13.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.13.0a1) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.12.0a2...0.13.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): draft fa-IR and ru-RU from en-US \(machine translation, unvouched\) [\#94](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/94) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
+## [0.12.0a2](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.12.0a2) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.12.0a1...0.12.0a2)
+
+**Merged pull requests:**
+
+- feat\(locale\): draft pl-PL from en-US \(machine translation, unvouched\) [\#91](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/91) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.12.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.12.0a1) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.11.3a4...0.12.0a1)
