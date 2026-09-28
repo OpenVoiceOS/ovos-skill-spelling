@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.13.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.13.1a1) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.13.0a1...0.13.1a1)
+
+**Merged pull requests:**
+
+- fix\(locale\): drop the runaway pl-PL word.blacklist line [\#96](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/96) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.13.0a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.13.0a1) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.12.0a2...0.13.0a1)
