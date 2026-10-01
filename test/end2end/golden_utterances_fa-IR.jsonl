@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "اسپیل کلمه", "lang": "fa-IR", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "شما می توانید اسپیل کلمه", "lang": "fa-IR", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "کلمه چطور می توان آن را نشان داد", "lang": "fa-IR", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}

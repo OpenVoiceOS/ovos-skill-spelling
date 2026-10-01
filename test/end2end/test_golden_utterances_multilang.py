@@ -3,9 +3,10 @@
 The skill has exactly one intent (spell.intent). Every locale that ships a
 spell.intent file gets its own golden_utterances_<lang>.jsonl, one row per
 locale expanded directly from that locale's own .intent template lines
-(optionals/alternations resolved), with the {word} slot filled by an
-obvious loanword. kab ships only a word.entity (no .intent file) and has no
-rows -- see the gap note in the PR body.
+(optionals/alternations resolved). The locales are the
+golden_utterances_<lang>.jsonl files present, except en-US, which
+test_golden_utterances.py runs. Rows marked needs_manual run as well: a row
+nobody vouched for still has to route to the intent it names.
 
 One MiniCroft is booted per locale in turn (lang=<locale>, no
 secondary_langs -- see ovos-skill-date-time/test/end2end/test_intents_it_it.py
@@ -41,10 +42,11 @@ _IGNORE = [
 
 END2END_DIR = Path(__file__).parent
 
-LANGS = [
-    "ca-ES", "da-DK", "de-DE", "es-ES", "eu-ES", "fr-FR", "gl-ES",
-    "it-IT", "nl-NL", "oc-FR", "pt-BR", "pt-PT", "sv-SE",
-]
+LANGS = sorted(
+    p.stem[len("golden_utterances_"):]
+    for p in END2END_DIR.glob("golden_utterances_*.jsonl")
+    if p.stem != "golden_utterances_en-US"
+)
 
 
 def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
@@ -73,10 +75,7 @@ def _load_rows(lang):
             line = line.strip()
             if not line:
                 continue
-            row = json.loads(line)
-            if row.get("needs_manual"):
-                continue
-            rows.append(row)
+            rows.append(json.loads(line))
     return rows
 
 
@@ -131,9 +130,6 @@ def _golden_id(row):
     return f"{row['lang']}-{row['intent_label']}-{row['utterance']}"
 
 
-KNOWN_BUGS = {}
-
-
 @pytest.mark.timeout(120)
 @pytest.mark.parametrize("row", GOLDEN_ROWS, ids=_golden_id)
 def test_golden_utterance_multilang(mc_factory, row):
@@ -142,9 +138,6 @@ def test_golden_utterance_multilang(mc_factory, row):
     assert row["skill_id"] == SKILL_ID, (
         f"{row['utterance']!r}: skill_id {row['skill_id']!r} is not the entry point {SKILL_ID!r}")
     matched = any(_matches_intent(t, SKILL_ID, row["intent_label"]) for t in types)
-    bug_key = (row["lang"], row["utterance"])
-    if bug_key in KNOWN_BUGS and not matched:
-        pytest.xfail(reason=f"known-bug: {KNOWN_BUGS[bug_key]}")
     assert matched, (
         f"[{row['lang']}] {row['utterance']!r}: expected {SKILL_ID}:{row['intent_label']}, got {types!r}"
     )

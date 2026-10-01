@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "przeczytanie słowo", "lang": "pl-PL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "Umiesz rytować słowo", "lang": "pl-PL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "jak napisać reguł słowo", "lang": "pl-PL", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}

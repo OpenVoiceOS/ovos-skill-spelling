@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "Как пишется слово", "lang": "ru-RU", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "заклинание слово", "lang": "ru-RU", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "Дайте мне написание слово", "lang": "ru-RU", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": true, "machine_generated": true}
