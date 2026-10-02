@@ -5,7 +5,6 @@ to the padacioso ``spell.intent`` handler. The spoken spelling is a side effect
 that varies by backend and is ignored, so the assertion covers only the intent
 binding.
 """
-import re
 import unittest
 
 from ovos_bus_client.message import Message
@@ -17,28 +16,20 @@ LANG = "en-US"
 
 
 def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
-    """Check whether ``msg_type`` is the matched-intent event for
-    ``intent_file`` (eg. ``spell.intent``), tolerant of which pipeline
-    plugin matched it.
+    """Exact match on the base name the skill registers.
 
-    Different pipeline plugins (padatious vs padacioso) register intents
-    under different normalizations of the ``.intent`` filename basename —
-    observed variants include the literal PascalCase basename with no
-    extension (``spell``) and the snake_case basename with the extension
-    kept (``spell.intent``). Rather than pin one wire format (which breaks
-    the moment the matching plugin or its version changes), compare
-    case-insensitively against the basename with the extension stripped
-    from both sides.
+    The runtime emits ``<skill_id>:<basename>`` with the basename spelled as
+    the file is; a comparison that folded case let ``Spell.intent`` or
+    ``sPeLl`` pass against a shipped ``spell.intent``. A caller must name the
+    file exactly, or a routing bug to the wrong case ships undetected.
     """
     prefix = f"{skill_id}:"
     if not msg_type.startswith(prefix):
         return False
     observed = msg_type[len(prefix):]
-    observed_base = observed.rsplit(".", 1)[0] if observed.endswith(".intent") else observed
-    expected_base = intent_file.rsplit(".", 1)[0]
-    # normalize PascalCase/snake_case to a bare lowercase token for comparison
-    norm = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
-    return norm(observed_base) == norm(expected_base)
+    observed_base = observed[:-len(".intent")] if observed.endswith(".intent") else observed
+    expected_base = intent_file[:-len(".intent")] if intent_file.endswith(".intent") else intent_file
+    return observed_base == expected_base
 
 _PIPELINE = [
     "ovos-padacioso-pipeline-plugin-high",
@@ -54,6 +45,26 @@ _IGNORE = [
     "enclosure.mouth.events.deactivate",
     "enclosure.mouth.events.activate",
 ]
+
+
+class TestMatchesIntentExact(unittest.TestCase):
+    def test_pascal_case_does_not_match_lower_case(self):
+        self.assertFalse(
+            _matches_intent("skill-ovos-spelling.openvoiceos:Spell.intent",
+                             SKILL_ID, "spell.intent")
+        )
+
+    def test_mixed_case_basename_does_not_match(self):
+        self.assertFalse(
+            _matches_intent("skill-ovos-spelling.openvoiceos:sPeLl",
+                             SKILL_ID, "spell.intent")
+        )
+
+    def test_exact_match_still_matches(self):
+        self.assertTrue(
+            _matches_intent("skill-ovos-spelling.openvoiceos:spell.intent",
+                             SKILL_ID, "spell.intent")
+        )
 
 
 class TestSpellingIntentsEnUS(unittest.TestCase):
