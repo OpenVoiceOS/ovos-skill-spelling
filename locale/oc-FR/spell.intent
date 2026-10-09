@@ -6,13 +6,13 @@ cossí s'escriu la paraula {word}
 espèla {word}
 espèla la paraula {word}
 espèla lo mot {word}
-escriu {word}
-escriu la paraula {word}
+escriu {word} letra per letra
+escriu la paraula {word} letra per letra
 dona-me las letras de {word}
 letras de la paraula {word}
 letras de {word}
 quinas son las letras de {word}
 pòdes me donar las letras de {word}
-pòdes escriure la paraula {word}
-pòdes escriure {word} per ieu
-daissa-me escriure la paraula {word}
+pòdes escriure la paraula {word} letra per letra
+pòdes escriure {word} letra per letra per ieu
+digas-me cossí s'escriu la paraula {word}

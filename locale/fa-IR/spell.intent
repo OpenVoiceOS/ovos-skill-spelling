@@ -1,20 +1,16 @@
 # Training samples for the "spell this word" intent.
 # {word} is an open slot filled with whatever the user asks to have spelled.
-# Alternations (a|b) and optionals [x] keep the phrasings consolidated instead
-# of one line per wording, see OVOS-INTENT-1 §3.
-# "letter by letter" and "for me" are trailing politeness/manner phrases: they
-# are listed as optionals so they are not swallowed into {word}.
-چگونگی بازی کردن {word}
-چطور می توانی برش بدهی {word}
-چطور می توانم شگفت زده شوم {word}
-شما می توانید اسپیل {word}
-می توانم برش بگیرم {word}
-اگر می خواهی گریه کنی {word}
-اسپیل {word}
-چگونه است {word} بازیگر
-چگونه هستند {word} بازیگر
-چه سخنرانی هایی از {word}
-به من بگویید که از {word}
-بازی کردن از {word}
-{word} چطور می توان آن را نشان داد
-{word} چطور آن را بازی می کنی
+چطور کلمه {word} را هجی می‌کنی
+چطور می‌توانی کلمه {word} را هجی کنی
+من چطور کلمه {word} را هجی کنم
+می‌توانی کلمه {word} را هجی کنی
+می‌شود کلمه {word} را برایم هجی کنی
+لطفا کلمه {word} را هجی کن
+هجی کلمه {word}
+املای {word} چطور است
+حروف {word} چیست
+املای {word} چیست
+املای {word} را به من بگو
+املای کلمه {word}
+کلمه {word} را چطور هجی می‌کنند
+حرف به حرف {word} را هجی کن

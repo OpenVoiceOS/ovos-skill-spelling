@@ -1,4 +1,5 @@
-(come si scrive|come scrivi|come si dice) [(la parola|la)] {word}
+(come si scrive|come scrivi) [(la parola|la)] {word}
+come si dice [la parola] {word} lettera per lettera
 (puoi|potresti) scandire [(la parola|la)] {word}
 scandisci [(la parola|la)] {word}
 [puoi dirmi] (qual è|qual'è) l'ortografia di {word}
