@@ -37,7 +37,6 @@ PHRASINGS = [
     "can you spell banana for me",
     "spell banana letter by letter",
     "how do you spell banana letter by letter",
-    "banana how do you spell that",
 ]
 
 # proofreading, definitions and witchcraft: they share the word "spell" with
