@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.13.2a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.13.2a1) (2026-10-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.13.1a1...0.13.2a1)
+
+**Merged pull requests:**
+
+- fix: anchor every spell.intent line to a spelling word in all locales [\#99](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/99) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+- fix: drop the leading-slot en-US sample that claims any question under padatious [\#98](https://github.com/OpenVoiceOS/ovos-skill-spelling/pull/98) ([mikejgray](https://github.com/mikejgray))
+
 ## [0.13.1a1](https://github.com/OpenVoiceOS/ovos-skill-spelling/tree/0.13.1a1) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-spelling/compare/0.13.0a1...0.13.1a1)
