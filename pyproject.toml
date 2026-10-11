@@ -31,11 +31,12 @@ test = [
     "ovos-plugin-manager",
     "ovos-utils",
 ]
-# heavy extra for the ovoscope end-to-end suite; padacioso needs no system deps.
+# heavy extra for the ovoscope end-to-end suite; padacioso and m2v need no system deps.
 end2end = [
     "pytest",
     "pytest-timeout",
-    "ovoscope>=1.0.1a1",
+    "ovoscope>=1.11.2a1",
+    "ovos-m2v-pipeline>=0.32.0a1",
 ]
 
 [project.urls]

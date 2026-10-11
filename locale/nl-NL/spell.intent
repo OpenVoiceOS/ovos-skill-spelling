@@ -1,4 +1,5 @@
-(hoe spel je|hoe schrijf je|hoe zeg je) [(het woord|)] {word}
+(hoe spel je|hoe schrijf je) [(het woord|)] {word}
+hoe zeg je [het woord] {word} letter voor letter
 (kun|kan|zou) je [het woord] {word} spellen
 spel [(het woord|)] {word}
 [kun je me zeggen] wat is de spelling van {word}

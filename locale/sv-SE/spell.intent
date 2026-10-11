@@ -3,4 +3,4 @@
 stava [(ordet|)] {word}
 [kan du säga] vad är stavningen av {word}
 [(kan|skulle) du] (säga|ge) mig stavningen av {word}
-[stavningen] av [ordet] {word}
+stavningen av [ordet] {word}

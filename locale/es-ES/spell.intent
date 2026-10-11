@@ -1,19 +1,20 @@
 dame las letras de {word}
-deja escribir la palabra {word}
+dime cómo se escribe la palabra {word}
+deletrea {word}
 deletrea la palabra {word}
 deletrear de {word}
 deletrear la palabra {word}
 deletrear {word}
-escribe la palabra {word}
-escribe {word}
+escribe la palabra {word} letra por letra
+escribe {word} letra por letra
 letras de la palabra {word}
 letras de {word}
-¿cuáles son las letras de {word}
-¿cómo escribes  {word}
-¿cómo escribes la palabra {word}
-¿cómo se escribe  {word}
-¿cómo se escribe la palabra {word}
-¿cómo se escribe {word}
-¿puedes darme las letras de {word}
-¿puedes escribir la palabra {word}
-¿puedes escribir {word} para mí
+cuáles son las letras de {word}
+cómo escribes  {word}
+cómo escribes la palabra {word}
+cómo se escribe  {word}
+cómo se escribe la palabra {word}
+cómo se escribe {word}
+puedes darme las letras de {word}
+puedes escribir la palabra {word} letra por letra
+puedes escribir {word} letra por letra para mí
