@@ -1,0 +1,16 @@
+# Training samples for the "spell this word" intent.
+# {word} is an open slot filled with whatever the user asks to have spelled.
+چطور کلمه {word} را هجی می‌کنی
+چطور می‌توانی کلمه {word} را هجی کنی
+من چطور کلمه {word} را هجی کنم
+می‌توانی کلمه {word} را هجی کنی
+می‌شود کلمه {word} را برایم هجی کنی
+لطفا کلمه {word} را هجی کن
+هجی کلمه {word}
+املای {word} چطور است
+حروف {word} چیست
+املای {word} چیست
+املای {word} را به من بگو
+املای کلمه {word}
+کلمه {word} را چطور هجی می‌کنند
+حرف به حرف {word} را هجی کن

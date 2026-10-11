@@ -1,0 +1,3 @@
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "Wie würde ich buchstabieren banana", "lang": "de-DE", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "wie würde ich das Wort buchstabieren banana", "lang": "de-DE", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
+{"skill_id": "skill-ovos-spelling.openvoiceos", "utterance": "Wie würde ich Wort buchstabieren elephant", "lang": "de-DE", "intent_label": "spell.intent", "intent_type": "padacioso", "needs_manual": false, "machine_generated": true}
