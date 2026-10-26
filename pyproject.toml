@@ -36,7 +36,7 @@ end2end = [
     "pytest",
     "pytest-timeout",
     "ovoscope>=1.11.2a1",
-    "ovos-m2v-pipeline>=0.32.0a1",
+    "ovos-m2v-pipeline>=0.37.3a1",
 ]
 
 [project.urls]
