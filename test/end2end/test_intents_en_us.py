@@ -1,49 +1,19 @@
 """End-to-end intent routing tests for the en-US locale.
 
-Each canonical utterance is fired through a real MiniCroft and asserted to route
-to the padacioso ``spell.intent`` handler. The spoken spelling is a side effect
-that varies by backend and is ignored, so the assertion covers only the intent
-binding.
+Each canonical utterance is fired through a real MiniCroft and asserted to
+route to the ``spell.intent`` handler. The spoken spelling is ignored, so the
+assertion covers only the intent binding and the slot.
 """
-import re
 import unittest
 
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
-from ovoscope import CaptureSession, get_minicroft
+from ovoscope import CaptureSession
+from ovoscope.routing import PIPELINE, TALLY, get_prototype_minicroft
 
 SKILL_ID = "skill-ovos-spelling.openvoiceos"
 LANG = "en-US"
 
-
-def _matches_intent(msg_type: str, skill_id: str, intent_file: str) -> bool:
-    """Check whether ``msg_type`` is the matched-intent event for
-    ``intent_file`` (eg. ``spell.intent``), tolerant of which pipeline
-    plugin matched it.
-
-    Different pipeline plugins (padatious vs padacioso) register intents
-    under different normalizations of the ``.intent`` filename basename —
-    observed variants include the literal PascalCase basename with no
-    extension (``spell``) and the snake_case basename with the extension
-    kept (``spell.intent``). Rather than pin one wire format (which breaks
-    the moment the matching plugin or its version changes), compare
-    case-insensitively against the basename with the extension stripped
-    from both sides.
-    """
-    prefix = f"{skill_id}:"
-    if not msg_type.startswith(prefix):
-        return False
-    observed = msg_type[len(prefix):]
-    observed_base = observed.rsplit(".", 1)[0] if observed.endswith(".intent") else observed
-    expected_base = intent_file.rsplit(".", 1)[0]
-    # normalize PascalCase/snake_case to a bare lowercase token for comparison
-    norm = lambda s: re.sub(r"[^a-z0-9]", "", s.lower())
-    return norm(observed_base) == norm(expected_base)
-
-_PIPELINE = [
-    "ovos-padacioso-pipeline-plugin-high",
-    "ovos-padacioso-pipeline-plugin-medium",
-]
 
 _IGNORE = [
     "speak",
@@ -59,18 +29,16 @@ _IGNORE = [
 class TestSpellingIntentsEnUS(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.minicroft = get_minicroft([SKILL_ID])
+        cls.minicroft = get_prototype_minicroft([SKILL_ID], lang=LANG)
 
     @classmethod
     def tearDownClass(cls):
         cls.minicroft.stop()
 
-    def _types(self, text: str) -> list[str]:
+    def _messages(self, text: str):
         session = Session(f"test-{hash(text)}")
         session.lang = LANG
-        session.pipeline = list(_PIPELINE)
-        # blacklisted_intents defaults to None, which crashes the padacioso
-        # pipeline (NoneType membership test) - force an empty list.
+        session.pipeline = list(PIPELINE)
         session.blacklisted_intents = []
         utterance = Message(
             "recognizer_loop:utterance",
@@ -86,14 +54,11 @@ class TestSpellingIntentsEnUS(unittest.TestCase):
             ignore_messages=_IGNORE,
         )
         capture.capture(utterance, timeout=30)
-        return [m.msg_type for m in capture.finish()]
+        return capture.finish()
 
     def _assert_intent(self, text: str, intent: str):
-        types = self._types(text)
-        self.assertTrue(
-            any(_matches_intent(t, SKILL_ID, intent) for t in types),
-            f"no message routed to {SKILL_ID}:{intent} ({types})",
-        )
+        types = [m.msg_type for m in self._messages(text)]
+        TALLY.assert_routed(text, f"{SKILL_ID}:{intent.removesuffix('.intent')}", types)
 
     def test_how_do_you_spell(self):
         self._assert_intent("how do you spell cat", "spell.intent")
@@ -105,36 +70,16 @@ class TestSpellingIntentsEnUS(unittest.TestCase):
         self._assert_intent("spelling of cat", "spell.intent")
 
     def test_can_you_what_is_the_spelling_of(self):
-        # golden_utterances.jsonl row 5; padacioso rejected this phrasing
-        # once "can you" stopped alternating in front of "what is the
-        # spelling of {word}" (regression fix).
+        # golden_utterances.jsonl row 5
         self._assert_intent("can you what is the spelling of word", "spell.intent")
 
     def _assert_word_slot_unresolved(self, text: str):
         # OVOS-INTENT-2 §4.3: a pronoun bound to {word} must be excluded by
         # word.blacklist, leaving the slot unresolved instead of binding the
         # pronoun literally.
-        session = Session(f"test-{hash(text)}")
-        session.lang = LANG
-        session.pipeline = list(_PIPELINE)
-        session.blacklisted_intents = []
-        utterance = Message(
-            "recognizer_loop:utterance",
-            {"utterances": [text], "lang": LANG},
-            {"session": session.serialize(), "source": "A", "destination": "B"},
-        )
-        capture = CaptureSession(
-            self.minicroft,
-            eof_msgs=["mycroft.skill.handler.start"],
-            ignore_messages=_IGNORE,
-        )
-        capture.capture(utterance, timeout=30)
-        messages = capture.finish()
-        matched = [
-            m for m in messages
-            if _matches_intent(m.msg_type, SKILL_ID, "spell.intent")
-        ]
-        self.assertTrue(matched, f"no message routed to {SKILL_ID}:spell.intent")
+        messages = self._messages(text)
+        TALLY.assert_routed(text, f"{SKILL_ID}:spell", [m.msg_type for m in messages])
+        matched = [m for m in messages if m.msg_type == f"{SKILL_ID}:spell"]
         self.assertFalse(
             matched[0].data.get("word"),
             f"pronoun bound to unresolved {{word}} slot: {matched[0].data}",

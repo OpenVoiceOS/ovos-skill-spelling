@@ -3,25 +3,18 @@
 "how do you spell it" routes to Spell.intent with the pronoun excluded from
 the {word} slot (word.blacklist, OVOS-INTENT-2 §4.3). The skill must then ask
 which word it should spell instead of spelling the pronoun or going silent.
-
-Padacioso is the matcher here: the assertion is about what the skill does once
-the intent is bound, so the strict, deterministic engine keeps the test about
-the skill rather than about padatious's fuzzy scoring.
 """
 from pathlib import Path
 
 import pytest
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
-from ovoscope import CaptureSession, get_minicroft
+from ovoscope import CaptureSession
+from ovoscope.routing import PIPELINE, TALLY, get_prototype_minicroft
 
 SKILL_ID = "skill-ovos-spelling.openvoiceos"
 LANG = "en-US"
 
-_PIPELINE = [
-    "ovos-padacioso-pipeline-plugin-high",
-    "ovos-padacioso-pipeline-plugin-medium",
-]
 
 def _dialog_lines(name):
     path = Path(__file__).parents[2] / "locale" / LANG / "dialog" / f"{name}.dialog"
@@ -35,7 +28,7 @@ GAVE_UP = _dialog_lines("no_word")
 
 @pytest.fixture(scope="module")
 def minicroft():
-    mc = get_minicroft([SKILL_ID])
+    mc = get_prototype_minicroft([SKILL_ID], lang=LANG)
     yield mc
     mc.stop()
 
@@ -43,7 +36,7 @@ def minicroft():
 def _spoken(mc, text, session_id):
     session = Session(session_id)
     session.lang = LANG
-    session.pipeline = list(_PIPELINE)
+    session.pipeline = list(PIPELINE)
     session.blacklisted_intents = []
     utterance = Message(
         "recognizer_loop:utterance",
@@ -52,7 +45,9 @@ def _spoken(mc, text, session_id):
     )
     capture = CaptureSession(mc, eof_msgs=["ovos.utterance.handled"])
     capture.capture(utterance, timeout=60)
-    return [m.data["utterance"] for m in capture.finish()
+    messages = capture.finish()
+    TALLY.assert_routed(text, f"{SKILL_ID}:spell", [m.msg_type for m in messages])
+    return [m.data["utterance"] for m in messages
             if m.msg_type == "ovos.utterance.speak"]
 
 
