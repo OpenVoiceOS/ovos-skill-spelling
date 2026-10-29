@@ -1,0 +1,7 @@
+{"utterance": "can you tell me the weather", "lang": "en-US", "source_skill": "ovos-skill-weather.openvoiceos"}
+{"utterance": "can you tell jokes", "lang": "en-US", "source_skill": "ovos-skill-icanhazdadjokes.openvoiceos"}
+{"utterance": "can you find something on wikipedia", "lang": "en-US", "source_skill": "ovos-skill-wikipedia.openvoiceos"}
+{"utterance": "ask wordnet about word", "lang": "en-US", "source_skill": "ovos-skill-wordnet.openvoiceos"}
+{"utterance": "tell me the word of the day", "lang": "en-US", "source_skill": "ovos-skill-word-of-the-day.openvoiceos"}
+{"utterance": "search wikihow for something", "lang": "en-US", "source_skill": "ovos-skill-wikihow.openvoiceos"}
+{"utterance": "set an alarm", "lang": "en-US", "source_skill": "ovos-skill-alerts.openvoiceos"}

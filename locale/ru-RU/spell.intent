@@ -1,0 +1,15 @@
+# Training samples for the "spell this word" intent.
+# {word} is an open slot filled with whatever the user asks to have spelled.
+Как пишется {word}
+как бы я написал {word} по буквам
+можешь произнести {word} по буквам
+не могли бы вы произнести {word} по буквам
+напишите {word} по буквам
+продиктуй {word} по буквам
+как пишется слово {word}
+как правильно пишется {word}
+какое написание у слова {word}
+скажи мне как пишется {word}
+Дайте мне написание {word}
+орфографическое описание {word}
+как ты произносишь {word} по буквам

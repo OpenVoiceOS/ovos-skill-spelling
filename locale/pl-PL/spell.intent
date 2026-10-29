@@ -1,0 +1,16 @@
+# Training samples for the "spell this word" intent.
+# {word} is an open slot filled with whatever the user asks to have spelled.
+jak przeliterować {word}
+jak się pisze {word}
+jak miałbym przeliterować {word}
+czy umiesz przeliterować {word}
+czy możesz przeliterować słowo {word}
+czy przeliterowałbyś {word}
+przeliteruj {word}
+jak się literuje {word}
+jak się pisze słowo {word}
+jaka jest pisownia {word}
+powiedz mi jak się pisze {word}
+podaj mi pisownię {word}
+pisownia słowa {word}
+przeliteruj mi słowo {word} litera po literze
